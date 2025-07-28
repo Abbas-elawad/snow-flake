@@ -1,5 +1,0 @@
-dbt_packages/
-target/
-.env
-*.pyc
-__pycache__/
