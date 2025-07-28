@@ -11,3 +11,135 @@
 [0m18:16:54.783539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D0B93BE80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D0DA77D30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D0DA75C60>]}
 [0m18:16:54.785492 [debug] [MainThread]: Flushing usage events
 [0m18:16:55.518980 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:39:17.422485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C835973EB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C836CDEA40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8373EADD0>]}
+
+
+============================== 18:39:17.434486 | 1ae76c10-a32e-4153-95ab-d7b1ccc7dd79 ==============================
+[0m18:39:17.434486 [info ] [MainThread]: Running with dbt=1.9.4
+[0m18:39:17.436440 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\alawa\\snow\\snow_dbt\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\alawa\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m18:39:17.510026 [info ] [MainThread]: dbt version: 1.9.4
+[0m18:39:17.511987 [info ] [MainThread]: python version: 3.10.7
+[0m18:39:17.513026 [info ] [MainThread]: python path: C:\Users\alawa\AppData\Local\Programs\Python\Python310\python.exe
+[0m18:39:17.515026 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m18:39:20.186028 [debug] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\adapters\factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 5, in <module>
+    from dbt.adapters.snowflake.impl import SnowflakeAdapter
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\adapters\snowflake\impl.py", line 8, in <module>
+    from dbt.adapters.catalogs import CatalogRelation, CatalogIntegration, CatalogIntegrationConfig
+ModuleNotFoundError: No module named 'dbt.adapters.catalogs'
+
+[0m18:39:20.188048 [error] [MainThread]: Encountered an error:
+No module named 'dbt.adapters.catalogs'
+[0m18:39:20.276842 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\cli\main.py", line 414, in debug
+    results = task.run()
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\debug.py", line 114, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\debug.py", line 205, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\config\profile.py", line 402, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\config\profile.py", line 368, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\config\profile.py", line 324, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\config\profile.py", line 148, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\adapters\factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\adapters\factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 5, in <module>
+    from dbt.adapters.snowflake.impl import SnowflakeAdapter
+  File "C:\Users\alawa\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\adapters\snowflake\impl.py", line 8, in <module>
+    from dbt.adapters.catalogs import CatalogRelation, CatalogIntegration, CatalogIntegrationConfig
+ModuleNotFoundError: No module named 'dbt.adapters.catalogs'
+
+[0m18:39:20.280836 [debug] [MainThread]: Command `dbt debug` failed at 18:39:20.280836 after 3.08 seconds
+[0m18:39:20.282838 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C835973EB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C837415C60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8486E0820>]}
+[0m18:39:20.283837 [debug] [MainThread]: Flushing usage events
+[0m18:39:21.050547 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:39:55.546806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268A28D2280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268A3B8AFA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268A3B8A1C0>]}
+
+
+============================== 18:39:55.557332 | 8c9e48be-67d6-4f67-b4d6-104255616d02 ==============================
+[0m18:39:55.557332 [info ] [MainThread]: Running with dbt=1.10.5
+[0m18:39:55.559285 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\alawa\\snow\\snow_dbt\\logs', 'profiles_dir': 'C:\\Users\\alawa\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m18:39:55.652905 [info ] [MainThread]: dbt version: 1.10.5
+[0m18:39:55.654222 [info ] [MainThread]: python version: 3.9.6
+[0m18:39:55.655678 [info ] [MainThread]: python path: c:\users\alawa\snow\dbt_env\scripts\python.exe
+[0m18:39:55.656737 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m18:39:57.427681 [info ] [MainThread]: Using profiles dir at C:\Users\alawa\.dbt
+[0m18:39:57.428681 [info ] [MainThread]: Using profiles.yml file at C:\Users\alawa\.dbt\profiles.yml
+[0m18:39:57.430684 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\alawa\snow\snow_dbt\dbt_project.yml
+[0m18:39:57.433681 [info ] [MainThread]: adapter type: snowflake
+[0m18:39:57.434701 [info ] [MainThread]: adapter version: 1.10.0
+[0m18:39:57.750680 [info ] [MainThread]: Configuration:
+[0m18:39:57.752686 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:39:57.754686 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:39:57.755687 [info ] [MainThread]: Required dependencies:
+[0m18:39:57.756736 [debug] [MainThread]: Executing "git --help"
+[0m18:39:57.874515 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:39:57.876494 [debug] [MainThread]: STDERR: "b''"
+[0m18:39:57.877493 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:39:57.878496 [info ] [MainThread]: Connection:
+[0m18:39:57.880494 [info ] [MainThread]:   account: ki78787.me-central2.gcp
+[0m18:39:57.881493 [info ] [MainThread]:   user: ABBAS1213
+[0m18:39:57.882493 [info ] [MainThread]:   database: finance_db
+[0m18:39:57.884499 [info ] [MainThread]:   warehouse: finance_wh
+[0m18:39:57.886499 [info ] [MainThread]:   role: accountadmin
+[0m18:39:57.887495 [info ] [MainThread]:   schema: L1_LANDING
+[0m18:39:57.889498 [info ] [MainThread]:   authenticator: None
+[0m18:39:57.891498 [info ] [MainThread]:   oauth_client_id: None
+[0m18:39:57.892492 [info ] [MainThread]:   query_tag: None
+[0m18:39:57.895501 [info ] [MainThread]:   client_session_keep_alive: False
+[0m18:39:57.897514 [info ] [MainThread]:   host: None
+[0m18:39:57.899507 [info ] [MainThread]:   port: None
+[0m18:39:57.900499 [info ] [MainThread]:   proxy_host: None
+[0m18:39:57.902495 [info ] [MainThread]:   proxy_port: None
+[0m18:39:57.903495 [info ] [MainThread]:   protocol: None
+[0m18:39:57.905499 [info ] [MainThread]:   connect_retries: 1
+[0m18:39:57.907501 [info ] [MainThread]:   connect_timeout: None
+[0m18:39:57.918501 [info ] [MainThread]:   retry_on_database_errors: False
+[0m18:39:57.923498 [info ] [MainThread]:   retry_all: False
+[0m18:39:57.924495 [info ] [MainThread]:   insecure_mode: False
+[0m18:39:57.936499 [info ] [MainThread]:   reuse_connections: True
+[0m18:39:57.951500 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m18:39:57.953498 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m18:39:58.900874 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m18:40:05.071986 [debug] [MainThread]: Using snowflake connection "debug"
+[0m18:40:05.072978 [debug] [MainThread]: On debug: select 1 as id
+[0m18:40:05.073987 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:40:07.645598 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.571 seconds
+[0m18:40:07.649620 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:40:07.652590 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:40:07.657644 [debug] [MainThread]: Command `dbt debug` succeeded at 18:40:07.656633 after 12.33 seconds
+[0m18:40:07.659631 [debug] [MainThread]: Connection 'debug' was left open.
+[0m18:40:07.661643 [debug] [MainThread]: On debug: Close
+[0m18:40:07.764613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268A28D2280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268A3C315E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268A581C340>]}
+[0m18:40:07.765613 [debug] [MainThread]: Flushing usage events
+[0m18:40:08.501128 [debug] [MainThread]: An error was encountered while trying to flush usage events
