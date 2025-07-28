@@ -1,0 +1,24 @@
+version: 2 
+
+sources: 
+    - name: landing
+      description: This is a replica of the Postgres database used by our app 
+      database: finance_db
+      schema: L1_LANDING
+      tables: 
+          - name: CUSTOMERS 
+            description: One record per customer. 
+          - name: DATES 
+            description: One record per date. Includes cancelled and deleted orders. 
+          - name: EMPLOYEES
+            description: One record per employee.
+          - name: ORDERITEMS
+            description: One record per order item. Includes cancelled and deleted orders.
+          - name: ORDERS    
+            description: One record per order. Includes cancelled and deleted orders.
+          - name: PRODUCTS
+            description: One record per product. Includes cancelled and deleted orders.
+          - name: STORES
+            description: One record per store. Includes cancelled and deleted orders.
+          - name: SUPPLIERS
+            description: One record per supplier. Includes cancelled and deleted orders.

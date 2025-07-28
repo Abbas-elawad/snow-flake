@@ -1,0 +1,7 @@
+ .gitignore
+dbt_packages/
+target/
+logs/
+*.pyc
+__pycache__/
+.env
