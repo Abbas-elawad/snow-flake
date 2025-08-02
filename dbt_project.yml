@@ -2,8 +2,9 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'snow_dbt'
-version: '1.0.0'
+name: snow_dbt
+version: '1.0'
+config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'snow_dbt'
@@ -32,7 +33,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   snow_dbt:
     # Config indicated by + and applies to all files under models/example/
-    customer_rev:
-      +materialized: view
-      marts:
-        +materialized: table
+    staging:
+      +materialized: table
+      legacy:
+        +materialized: view
+    marts:
+      +materialized: table
+
